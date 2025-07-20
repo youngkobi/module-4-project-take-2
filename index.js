@@ -1,17 +1,17 @@
 // API 1: "https://jsonplaceholder.typicode.com/users"
 // API 2: "https://jsonplaceholder.typicode.com/posts?userId=:id"
 const movieSearchBox = document.getElementById('movie-search-box')
-
+const bookswrapper =document.querySelector(".books")
 
 
 
 async function loadMovies(searchTerm) {
     const URL =`https://omdbapi.com/?s=${searchTerm}&apikey=32588a38`
-// books.classList += ' books__loading'
+bookswrapper.classList.add("books__loading")
 
     const res = await fetch (`${URL}`)
     const data = await res.json()
-    // bookswrapper.classList.remove(' books__loading')
+    bookswrapper.classList.remove('books__loading')
     const movieListEl = document.querySelector(".user-list")
     movieListEl.innerHTML = 
     data.Search.map((movie) => `
