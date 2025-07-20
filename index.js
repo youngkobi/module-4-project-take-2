@@ -1,0 +1,35 @@
+// API 1: "https://jsonplaceholder.typicode.com/users"
+// API 2: "https://jsonplaceholder.typicode.com/posts?userId=:id"
+const movieSearchBox = document.getElementById('movie-search-box')
+
+
+
+
+async function loadMovies(searchTerm) {
+    const URL =`https://omdbapi.com/?s=${searchTerm}&apikey=32588a38`
+// books.classList += ' books__loading'
+
+    const res = await fetch (`${URL}`)
+    const data = await res.json()
+    // bookswrapper.classList.remove(' books__loading')
+    const movieListEl = document.querySelector(".user-list")
+    movieListEl.innerHTML = 
+    data.Search.map((movie) => `
+    <div class="user-card">
+            <div class="user-card__container">
+              <h3>${movie.Title}</h4>
+                <p><b>Year:</b> ${movie.Year}</p>
+                  <img class="poster__img" src="${movie.Poster}" alt="" >
+            </div>
+          </div>`
+    ).slice(0, 6)
+.join("")
+// console.log(data.Search)
+    // if(data.response = 'true') displayMovieList(data.Search)
+}
+
+function findMovies(){
+    let searchTerm = (movieSearchBox.value).trim()
+    loadMovies(searchTerm)
+    console.log(searchTerm)
+    }
