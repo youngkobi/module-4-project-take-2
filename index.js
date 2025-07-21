@@ -3,7 +3,7 @@
 const movieSearchBox = document.getElementById('movie-search-box')
 const bookswrapper =document.querySelector(".books")
 
-const searchTitle = document.querySelector(".search__title")
+
 
 
 async function loadMovies(searchTerm) {
@@ -32,11 +32,8 @@ bookswrapper.classList.add("books__loading")
 function findMovies(){
     let searchTerm = (movieSearchBox.value).trim()
     loadMovies(searchTerm)
+     const searchTitle = document.getElementById("search__title")
+  searchTitle.innerHTML = `<h2> Search Results for: ${searchTerm}<h2></h2>`
+  console.log(movieSearchBox.value) 
     }
 
-    
-function title(){
- searchTitle.array.forEach(searchTitle => {
-  searchTitle.innerHTML = `<h2 class="search__title"> Search Results for: ${searchTerm}<h2>`
- });
-}
