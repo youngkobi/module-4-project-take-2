@@ -26,6 +26,11 @@
           <div class= "books">
              <i class="fa-solid fa-spinner books__loading--spinner" ></i>
            </div>
+              <select id="filter" onchange="filterBooks(event)">
+            <option value="" disabled selected>Sort</option>
+            <option value="Old_To_New">Old to New</option>
+            <option value="New_to_Old">New to Old</option>
+          </select>
       <div class="user-list">
         <div class="user">
           <div class="user-card">

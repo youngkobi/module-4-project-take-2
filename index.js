@@ -3,6 +3,15 @@
 const movieSearchBox = document.getElementById('movie-search-box')
 const bookswrapper =document.querySelector(".books")
 
+function filtermovies(filter){
+      if(filter === "Old_To_New"){
+        movie.sort((a,b)=> a.year - b.year)
+      }
+      else if(filter === "New_to_Old"){
+        movie.sort((a,b)=> a.year - b.year)
+      }
+
+}
 
 
 
@@ -14,6 +23,10 @@ bookswrapper.classList.add("books__loading")
     const data = await res.json()
     bookswrapper.classList.remove('books__loading')
     const movieListEl = document.querySelector(".user-list")
+
+    filtermovies()
+
+
     movieListEl.innerHTML = 
     data.Search.map((movie) => `
     <div class="user-card">
@@ -25,6 +38,8 @@ bookswrapper.classList.add("books__loading")
           </div>`
     ).slice(0, 6)
 .join("")
+
+
 // console.log(data.Search)
     // if(data.response = 'true') displayMovieList(data.Search)
 }
@@ -37,3 +52,10 @@ function findMovies(){
   console.log(movieSearchBox.value) 
     }
 
+
+
+    
+
+    function filterBooks(event) {
+      loadMovies(event.target.value)
+    }
