@@ -21,18 +21,20 @@
         placeholder="Search Movie Title"
         id="movie-search-box" onchange="findMovies()"
         />
-        <!-- <div class="glass__wrap">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        </div> -->
+        <div class="glass__wrap">
+          <button onclick="loadmovies()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
       </div>
       </div>
         <div id="search__title">
         <h2> Search Results for:<h2>
           </div>
           <div class= "books">
-           <button>
              <i class="fa-solid fa-spinner books__loading--spinner" ></i>
-           </button>
+
+         
            </div>
               <select id="filter" onchange="filterBooks(event)">
             <option value="" disabled selected>Sort</option>
