@@ -137,10 +137,23 @@ p {
   color: red;
 }
 
+.input__wrap{
+ position: relative;
+} 
+.glass__wrap {
+    position: absolute;
+    top: 10%;
+    right: 2%;
+    z-index: 100;
+}
+
 .books__loading{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.fa-magnifying-glass{
+  z-index: 100;
 }
 
 .books__loading--spinner{
@@ -148,4 +161,13 @@ p {
 }
 .books__loading .books__loading--spinner{
   display: block !important;
+}
+
+.books__loading .user-list{
+  visibility: hidden !important;
+}
+
+button{
+  cursor:not-allowed;
+  z-index: 100;
 }

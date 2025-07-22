@@ -10,11 +10,12 @@ let movie = []
 
 function filtermovies(filter){
       if(filter === "Old_To_New"){
-        movie.sort((a,b)=> parseInt(a.year) - parseInt(b.year))
+        movie.sort((a,b)=> parseInt(a.Year) - parseInt(b.Year))
       }
       else if(filter === "New_to_Old"){
-        movie.sort((a,b)=> parseInt(b.year) - parseInt(a.year))
+        movie.sort((a,b)=> parseInt(b.Year) - parseInt(a.Year))
       }
+      renderMovies()
 
 }
 
@@ -30,7 +31,7 @@ bookswrapper.classList.add("books__loading")
     bookswrapper.classList.remove('books__loading')
     
 
-    if (data.Response === true){
+    if (data.Response === "True"){
       movie = data.Search
       renderMovies()
     }

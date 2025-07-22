@@ -14,17 +14,25 @@
   <div class="container">
     <div class="row">
       <div class="searchbar">
+        <div class="input__wrap">
         <input
         type="text"
         class="form-control"
         placeholder="Search Movie Title"
-        id="movie-search-box" onkeyup="findMovies()" onclick="findMovies()"
-        /></div>
+        id="movie-search-box" onchange="findMovies()"
+        />
+        <!-- <div class="glass__wrap">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        </div> -->
+      </div>
+      </div>
         <div id="search__title">
         <h2> Search Results for:<h2>
           </div>
           <div class= "books">
+           <button>
              <i class="fa-solid fa-spinner books__loading--spinner" ></i>
+           </button>
            </div>
               <select id="filter" onchange="filterBooks(event)">
             <option value="" disabled selected>Sort</option>
@@ -35,8 +43,8 @@
         <div class="user">
           <div class="user-card">
             <div class="user-card__container">
-              <h3>Movie Title</h4>
-                <p><b>Year:</b> year</p>
+              <h3>This is Your Moive Search Engine</h4>
+                <p><b>Giving you</b> Year, Poster, and Titles</p>
                 
                   <img src="" alt="" class="poster__img">
       
